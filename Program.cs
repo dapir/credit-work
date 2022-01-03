@@ -2,21 +2,33 @@
  Первоначальный массив можно ввести с клавиатуры, либо сгенерировать случайным образом. 
  При решении не рекомендуется пользоваться коллекциями, лучше обойтись исключительно массивами.*/
 
-    int[] firstArray = new int[10];
-    int[] secondArray = new int[firstArray.Length];
-    Random rand = new Random();
-    for (int i = 0; i < firstArray.Length; i++)
-    {
+
+int[] firstArray = new int[10];
+void oneArray (int[] firstArray)
+{
+   Random rand = new Random();
+   for (int i = 0; i < firstArray.Length; i++)
+   {
       firstArray[i] = rand.Next(100);
       Console.Write(firstArray[i] + " ");
-    }
-    Console.WriteLine();
+   }
+      
+   Console.WriteLine();
+}
 
-    for (int i = 0; i < firstArray.Length; i++)
-    {
-          if (firstArray[i] % 2 == 0)
-          {
-             secondArray[i] = firstArray[i];
-             Console.Write(secondArray[i] + " ");
-          } 
-    }
+
+void twoArray (int[] secondArray)
+{
+for (int i = 0; i < firstArray.Length; i++)
+   {
+      if (firstArray[i] % 2 == 0)
+      {
+         secondArray[i] = firstArray[i];
+         Console.Write(secondArray[i] + " ");
+      } 
+   }
+}
+
+int[] secondArrray = new int[firstArray.Length];
+oneArray(firstArray);
+twoArray(secondArrray);
